@@ -1,24 +1,18 @@
-const http = require('http');
-const fs = require('fs');
+const express = require('express');
 const path = require('path');
+const app = express();
 
-const server = http.createServer((req, res) => {
-    // __dirname ব্যবহার করে index.html ফাইলের সঠিক লোকেশন খুঁজে পাওয়া
-    const filePath = path.join(__dirname, 'index.html');
-
-    fs.readFile(filePath, (err, content) => {
-        if (err) {
-            res.writeHead(500, { 'Content-Type': 'text/plain' });
-            res.end('Error: index.html file not found!');
-        } else {
-            res.writeHead(200, { 'Content-Type': 'text/html' });
-            res.end(content, 'utf-8');
-        }
-    });
+// হোম পেজে আমাদের index.html ফাইলটি দেখাবে
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// Render-এর পোর্টের জন্য process.env.PORT ব্যবহার করা জরুরি
+// একটি নতুন API রুট (টেস্ট করার জন্য)
+app.get('/api', (req, res) => {
+    res.json({ message: "Express is working perfectly!", status: "Success" });
+});
+
 const PORT = process.env.PORT || 3000;
-server.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+app.listen(PORT, () => {
+    console.log(`Express server is running on port ${PORT}`);
 });

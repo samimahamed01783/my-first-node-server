@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/samimahamed01783/my-first-node-server/issues"
   },
-  "homepage": "https://github.com/samimahamed01783/my-first-node-server#readme"
+  "homepage": "https://github.com/samimahamed01783/my-first-node-server#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
 }
