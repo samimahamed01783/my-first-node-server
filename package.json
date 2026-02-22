@@ -1,0 +1,21 @@
+{
+  "name": "my-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samimahamed01783/my-first-node-server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/samimahamed01783/my-first-node-server/issues"
+  },
+  "homepage": "https://github.com/samimahamed01783/my-first-node-server#readme"
+}
